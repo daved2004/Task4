@@ -1,0 +1,24 @@
+--- 
+- name: Install packages on Dulaev's devices
+  hosts: Dulaev
+  become: yes
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install cmatrix
+      apt:
+        name: cmatrix
+        state: present
+
+    - name: Install cowsay
+      apt:
+        name: cowsay
+        state: present
+
+    - name: Install sl
+      apt:
+        name: sl
+        state: present
